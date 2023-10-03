@@ -1,0 +1,26 @@
+[package]
+name = "lambda-database-migration-aware-health-check"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aws-config = "0.56.1"
+aws-sdk-ec2 = "0.31.2"
+aws-sdk-elasticloadbalancingv2 = "0.31.1"
+aws-sdk-secretsmanager = "0.31.1"
+aws_lambda_events = { version = "0.10.0", default-features = false, features = [
+    "cloudwatch_events",
+] }
+envconfig = "0.10.0"
+
+lambda_runtime = "0.8.1"
+mysql = { version = "24.0.0", default-features = false, features = [
+    "default-rustls",
+] }
+serde = "1.0.188"
+serde_json = "1.0.107"
+tokio = { version = "1", features = ["macros"] }
+tracing = { version = "0.1", features = ["log"] }
+tracing-subscriber = { version = "0.3", default-features = false, features = [
+    "fmt",
+] }
